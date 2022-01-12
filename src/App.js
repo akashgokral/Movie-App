@@ -9,7 +9,7 @@ const [query,setquery] = useState("");
 const [result,setresult]=useState([]);
 
  const handleapi =  () =>{
-  axios.get("http://www.omdbapi.com/?s="+query+"&apikey=a8032f36")
+  axios.get("https://www.omdbapi.com/?s="+query+"&apikey=a8032f36")
   .then(res=>setresult((res.data.Search)))
   .catch(err => console.log(err))
  }
@@ -32,7 +32,7 @@ const handlesubmit = (e) =>{
     <div>
       <nav>
         <div className='logo'>
-        <img src={film}/>
+        <img src={film} alt='logo'/>
           <h1>Movie<span>A</span>pp</h1>
         </div>
       <form onSubmit={handlesubmit}>
@@ -47,7 +47,7 @@ const handlesubmit = (e) =>{
        <div className='cardcon'>
      <div key={Math.random().toString()}>
        <div className='card'>
-       <li><img src={res1.Poster}/></li>
+       <li><img src={res1.Poster} alt='Movie Poster'/></li>
        <li>{res1.Title}</li>
        </div>
      </div>
