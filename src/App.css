@@ -138,7 +138,12 @@ nav button{
         letter-spacing: 1px;
     }
 
+    .error{
+        height: max-content;
+    }
+
     .error h1{
+        margin-top: -20px;
         font-size: 80px;
     }
     .error h2{
