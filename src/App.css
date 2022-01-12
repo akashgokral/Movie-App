@@ -88,6 +88,28 @@ nav button{
     letter-spacing: 1px;
 }
 
+.error{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 92vh;
+}
+
+.error h1{
+    font-size: 80px;
+}
+
+.error h2{
+    color: red;
+    font-size: 40px;
+}
+
+.error img{
+    height: 250px;
+    width: 250px;
+}
+
 @media only screen and (max-width: 600px) {
     nav{
         flex-direction: column;
@@ -116,4 +138,20 @@ nav button{
         letter-spacing: 1px;
     }
 
+    .error h1{
+        font-size: 80px;
+    }
+    .error h2{
+        font-size: 35px;
+        color: red;
+    }
+    
+    .error p{
+        font-size: 16px;
+    }
+
+    .error img{
+        height: 200px;
+        width: 200px;
+    }
 }

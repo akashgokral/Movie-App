@@ -2,6 +2,7 @@ import {useState} from 'react';
 import axios from 'axios';
 import './App.css';
 import film from './images/film.svg'
+import error from './images/error.png'
 
 
 function App() {
@@ -10,7 +11,8 @@ const [result,setresult]=useState([]);
 
  const handleapi =  () =>{
   axios.get("https://www.omdbapi.com/?s="+query+"&apikey=a8032f36")
-  .then(res=>setresult((res.data.Search)))
+  .then(res=>{setresult((res.data.Search))
+  console.log(result)})
   .catch(err => console.log(err))
  }
 
@@ -41,6 +43,8 @@ const handlesubmit = (e) =>{
  </form>
  </nav>
 
+
+{ typeof result !== 'undefined' ?
  <div className='data'>
    {result.map(res1=>{
      return (
@@ -53,8 +57,16 @@ const handlesubmit = (e) =>{
      </div>
     </div>)
    })}</div>
+
+  :<div className='error'>
+    <h1>Oops!</h1>
+    <img src={error} alt='error'/>
+    <h2>Error 404</h2>
+  <p>searched movie not found </p>
+  </div>}
     </div>
   );
 }
 
 export default App;
+
